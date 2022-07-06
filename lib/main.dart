@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                         "assets/images/Profil Fotosu 5 büyük daire.png",
                       )),
                   Text(
-                    "Ben Barış Aslan",
+                    "Barış Aslan",
                     style: GoogleFonts.montserrat(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
