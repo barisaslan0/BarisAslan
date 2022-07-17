@@ -21,57 +21,60 @@ class _VideosState extends State<Videos> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Youtube"),
-          backgroundColor: Colors.red,
-        ),
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text("YouTube Video Kapak Fotoğraflarım"),
-                Padding(
-                  padding: EdgeInsets.all(50),
-                  child: thumbnails[numberThumbnail],
-                ),
-                Container(
-                  width: 300,
-                  child: Divider(
-                    color: Colors.red,
-                    thickness: 3,
-                  ),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      numberThumbnail = Random().nextInt(6);
-                    });
-                  },
-                  child: Text(
-                    "Fotoğrafı Değiştir",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-                SizedBox(
-                  height: 150,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text("GERİ")),
-              ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Center(
+              child: Text("YouTube Video Kapak Fotoğraflarım"),
             ),
           ),
         ),
-      ),
+        Expanded(
+          flex: 3,
+          child: Padding(
+            padding: EdgeInsets.all(30),
+            child: thumbnails[numberThumbnail],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Container(
+              width: 300,
+              child: Divider(
+                color: Colors.red,
+                thickness: 3,
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.yellow,
+              ),
+              onPressed: () {
+                setState(() {
+                  numberThumbnail = Random().nextInt(6);
+                });
+              },
+              child: Text(
+                "Fotoğrafı Değiştir",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
